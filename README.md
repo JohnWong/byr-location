@@ -2,13 +2,13 @@ byr-location
 ============
 
 a chrome extension that show location of every post in byr bbs.
-IP information comes from pytool.sinaapp.com (source code: JohnWong/geoip @ Github.com)
+<br>IP information comes from <a href="pytool.sinaapp.com">pytool.sinaapp.com</a> (source code: <a href="https://github.com/JohnWong/geoip">JohnWong/geoip @ Github.com</a>)
 
 supported bbs:
-bbs.byr.cn
-bbs6.byr.cn
-forum.byr.cn
-bbs.byr.edu.cn
-bbs6.byr.edu.cn
-forum.byr.edu.cn
-www.newsmth.net
+<br><a href="bbs.byr.cn">bbs.byr.cn</a>
+<br><a href="bbs6.byr.cn">bbs6.byr.cn</a>
+<br><a href="forum.byr.cn">forum.byr.cn</a>
+<br><a href="bbs.byr.edu.cn">bbs.byr.edu.cn</a>
+<br><a href="bbs6.byr.edu.cn">bbs6.byr.edu.cn</a>
+<br><a href="forum.byr.edu.cn">forum.byr.edu.cn</a>
+<br><a href="www.newsmth.net">www.newsmth.net</a>
