@@ -6,7 +6,7 @@ IP information comes from pytool.sinaapp.com (source code: JohnWong/geoip @ Gith
 
 supported bbs:
 bbs.byr.cn
-bbs6.byr.c
+bbs6.byr.cn
 forum.byr.cn
 bbs.byr.edu.cn
 bbs6.byr.edu.cn
