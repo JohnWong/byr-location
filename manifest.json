@@ -1,0 +1,26 @@
+﻿{
+  "name": "BYR ip to location",
+  "version": "1.6",
+  "description": "北邮人论坛用户发贴IP地址后附加地址信息",
+  "background": { "scripts": ["background.js"] },
+  "page_action" :
+  {
+    "default_icon" : "icon-19.png",
+    "default_title" : "BYR ip to location"
+  },
+  "permissions" : [
+    "tabs",
+	"webRequest",
+	"*://pytool.sinaapp.com/*"
+  ],
+  "content_scripts": [ {
+    "js": [ "content.js"],
+    "matches": ["*://bbs.byr.cn/*", "*://bbs6.byr.cn/*", "*://forum.byr.cn/*","*://bbs.byr.edu.cn/*", "*://bbs6.byr.edu.cn/*", "*://forum.byr.edu.cn/*", "*://www.newsmth.net/*"],
+    "all_frames" : true
+  }],
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  },
+  "manifest_version": 2
+}
