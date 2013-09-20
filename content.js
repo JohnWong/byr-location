@@ -29,10 +29,15 @@ function sendRequest(ip){
   xhr.open("GET", "http://pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-      var resp = JSON.parse(xhr.responseText);
-	  var ip = resp['geo']['ip'];
-	  var loc = resp['geo']['loc'];
-	  showAddress({'ip': ip,'loc': loc});
+	  if(xhr.responseText == ''){
+	    // fail try again
+		sendRequest(ip);
+	  } else {
+        var resp = JSON.parse(xhr.responseText);
+	    var ip = resp['geo']['ip'];
+	    var loc = resp['geo']['loc'];
+	    showAddress({'ip': ip,'loc': loc});
+	  }
     }
   }
   xhr.send();
