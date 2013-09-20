@@ -26,27 +26,30 @@ function onLoad(event) {
 
 function sendRequest(ip){
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip, true);
+  xhr.open("GET", "http://pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip + "&try=" + Math.random(), true);
+  xhr.data = ip;
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-	  if(xhr.responseText == ''){
-	    // fail try again
-		sendRequest(ip);
-	  } else {
+      if(xhr.responseText == ''){
+        // fail try again
+        setTimeout(function(){
+          sendRequest(xhr.data);
+        }, 50);
+      } else {
         var resp = JSON.parse(xhr.responseText);
-	    var ip = resp['geo']['ip'];
-	    var loc = resp['geo']['loc'];
-	    showAddress({'ip': ip,'loc': loc});
-	  }
+        var ip = resp['geo']['ip'];
+        var loc = resp['geo']['loc'];
+        showAddress({'ip': ip,'loc': loc});
+      }
     }
   }
   xhr.send();
 }
 
 function showAddress(response){
-	var spans = document.getElementsByClassName(response.ip);
-	for(var i=0,span;span = spans[i];i++){
-		span.innerHTML = " [" + response.loc + "] ";
-	}
+    var spans = document.getElementsByClassName(response.ip);
+    for(var i=0,span;span = spans[i];i++){
+        span.innerHTML = " [" + response.loc + "] ";
+    }
 }
 document.addEventListener("DOMNodeInserted", onLoad, false);
