@@ -2,6 +2,8 @@
 // @author         Binux
 // @author         John Wong
 
+var isMobile;
+
 function showLoading(ip, font){
   var span = document.createElement("span");
   span.innerHTML = " [ LOADING... ]";
@@ -10,16 +12,20 @@ function showLoading(ip, font){
 }
 
 function onLoad(event) {
+  if(isMobile){
+    var sps = document.getElementsByClassName("sp");
+    for ( var i = 0,sp; sp = sps[i]; i++ ){
+      sp.innerHTML = sp.innerHTML.replace(/(\[?FROM:?\D{0,5}[0-9a-fA-F\.:]+.\]?)/g, '<font>$1</font>');
+    }
+  } 
   var fonts = document.getElementsByTagName("font");
   for ( var i = 0,font;font = fonts[i];i++ )
   {
-    var result = font.innerHTML.match(/\[FROM:\D{0,5}([0-9a-fA-F\.:]+.)\]/);
-    if(result && font.lastChild.nodeName != "SPAN")
-    {
+    var result = font.innerHTML.match(/\[?FROM:?\D{0,5}([0-9a-fA-F\.:]+.)\]?/);
+    if(result && font.lastChild.nodeName != "SPAN"){
       var ip = result[1].replace("*","0");
       showLoading(ip, font);
       sendRequest(ip);
-      return;
     }
   }
 }
@@ -52,4 +58,11 @@ function showAddress(response){
         span.innerHTML = " [" + response.loc + "] ";
     }
 }
-document.addEventListener("DOMNodeInserted", onLoad, false);
+
+if(isMobile === undefined){
+  isMobile = window.location.href.indexOf("://m.") >= 0;
+}
+if(isMobile)
+  onLoad();
+else
+  document.addEventListener("DOMNodeInserted", onLoad, false);
