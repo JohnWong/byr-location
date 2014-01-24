@@ -6,6 +6,9 @@ var isMobile;
 
 function showLoading(ip, font){
   var span = document.createElement("span");
+  span.style.color="inherit";
+  span.style.fontWeight="inherit";
+  span.style.fontSize="inherit";
   span.innerHTML = " [ LOADING... ]";
   span.className = ip;
   font.appendChild(span);
@@ -15,15 +18,15 @@ function onLoad(event) {
   if(isMobile){
     var sps = document.getElementsByClassName("sp");
     for ( var i = 0,sp; sp = sps[i]; i++ ){
-      sp.innerHTML = sp.innerHTML.replace(/(\[?FROM:?\D{0,5}[0-9a-fA-F\.:]+.\]?)/g, '<font>$1</font>');
+      sp.innerHTML = sp.innerHTML.replace(/(\[?FROM:? {0,5}[0-9a-fA-F\.:]+.\]?)/g, '<font>$1</font>');
     }
   } 
   var fonts = document.getElementsByTagName("font");
   for ( var i = 0,font;font = fonts[i];i++ )
   {
-    var result = font.innerHTML.match(/\[?FROM:?\D{0,5}([0-9a-fA-F\.:]+.)\]?/);
+    var result = font.innerHTML.match(/\[?FROM:? {0,5}(&nbsp;)?([0-9a-fA-F\.:]+\*?)\]?/);
     if(result && font.lastChild.nodeName != "SPAN"){
-      var ip = result[1].replace("*","0");
+      var ip = result[2].replace("*","0");
       showLoading(ip, font);
       sendRequest(ip);
     }
