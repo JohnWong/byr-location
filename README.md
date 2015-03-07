@@ -1,7 +1,7 @@
 byr-location
 ============
 
-A Chrome extension that shows location of every post in BYR bbs. Available on [Chrome Web Store](https://chrome.google.com/webstore/detail/byr-ip-to-location/hiopcloooiiogkpfjaoogkiodoocogdh) (Thanks to Chon)。
+A Chrome extension that shows location of every post in BYR bbs. Available on [Chrome Web Store](https://chrome.google.com/webstore/detail/byr-ip-to-location/fkgdjdphlpgcccgfaacjkchmphafhcmd) 。
 
 IP information comes from [pytool.sinaapp.com](http://pytool.sinaapp.com) (source code: [JohnWong/python-tool](https://github.com/JohnWong/python-tool) @ Github</a>)
 
