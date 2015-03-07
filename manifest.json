@@ -1,7 +1,7 @@
 ﻿{
-  "name": "BYR ip to location",
-  "version": "1.6",
-  "description": "北邮人论坛用户发贴IP地址后附加地址信息",
+  "name": "BYR IP to Location",
+  "version": "1.7",
+  "description": "北邮人论坛或水木社区用户发贴IP地址后附加地理信息",
   "background": { "scripts": ["background.js"] },
   "page_action" :
   {
