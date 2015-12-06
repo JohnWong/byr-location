@@ -28,22 +28,24 @@ function onLoad(event) {
     if(result && font.lastChild.nodeName != "SPAN"){
       var ip = result[2].replace("*","0");
       showLoading(ip, font);
-      sendRequest(ip);
+      sendRequest(ip, 0);
     }
   }
 }
 
-function sendRequest(ip){
+function sendRequest(ip, retry){
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip + "&try=" + Math.random(), true);
   xhr.data = ip;
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-      if(xhr.responseText == ''){
+      if (xhr.responseText == ''){
         // fail try again
-        setTimeout(function(){
-          sendRequest(xhr.data);
-        }, 50);
+        if (retry < 5) {
+          setTimeout(function(){
+            sendRequest(xhr.data, retry + 1);
+          }, 100);
+        }
       } else {
         var resp = JSON.parse(xhr.responseText);
         var ip = resp['geo']['ip'];
