@@ -7,7 +7,7 @@
 	<key>Builder Version</key>
 	<string>11601.2.7.2</string>
 	<key>CFBundleDisplayName</key>
-	<string>byr-ip-location</string>
+	<string>BYR IP to Location</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.johnwong.byr-ip</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -27,7 +27,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>北邮人论坛或水木社区用户发贴IP地址后附加地理信息</string>
+	<string>Shows geo location of every post in byr/newsmth bbs</string>
 	<key>DeveloperIdentifier</key>
 	<string>KC63T62SBR</string>
 	<key>ExtensionInfoDictionaryVersion</key>
@@ -54,5 +54,7 @@
 			<string>Some</string>
 		</dict>
 	</dict>
+	<key>Website</key>
+	<string>https://github.com/JohnWong/byr-location</string>
 </dict>
 </plist>
