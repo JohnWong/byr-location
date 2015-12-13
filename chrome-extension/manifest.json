@@ -10,8 +10,8 @@
   },
   "permissions" : [
     "tabs",
-	"webRequest",
-	"*://pytool.sinaapp.com/*"
+	  "webRequest",
+	  "*://pytool.sinaapp.com/*"
   ],
   "content_scripts": [ {
     "js": [ "content.js"],
