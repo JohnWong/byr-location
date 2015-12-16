@@ -54,6 +54,8 @@
 			<string>Some</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.githubusercontent.com/JohnWong/byr-location/master/safari-update.plist</string>
 	<key>Website</key>
 	<string>https://github.com/JohnWong/byr-location</string>
 </dict>
