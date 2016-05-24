@@ -35,7 +35,7 @@ function onLoad(event) {
 
 function sendRequest(ip, retry){
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip + "&try=" + Math.random(), true);
+  xhr.open("GET", "//pytool.sinaapp.com/geo?type=json&pos=1&ip=" + ip + "&try=" + Math.random(), true);
   xhr.data = ip;
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {

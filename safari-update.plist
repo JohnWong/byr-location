@@ -10,11 +10,11 @@
        <key>Developer Identifier</key>
        <string>KC63T62SBR</string>
        <key>CFBundleVersion</key>
-       <string>1.7</string>
+       <string>1.8</string>
        <key>CFBundleShortVersionString</key>
-       <string>1.7</string>
+       <string>1.8</string>
        <key>URL</key>
-       <string>https://github.com/JohnWong/byr-location/releases/download/1.7/byr-location.safariextz</string>
+       <string>https://github.com/JohnWong/byr-location/releases/download/1.8/byr-location.safariextz</string>
      </dict>
    </array>
 </dict>
